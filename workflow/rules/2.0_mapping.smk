@@ -62,7 +62,7 @@ rule bwa_mem_paired:
         ref="results/ref/{ref}/{ref}.fa",
         idx=rules.bwa_index.output,
     output:
-        bam=temp("results/mapping/mapped/{sample}_{unit}_{lib}.{ref}.mem.{pairing}.bam"),
+        bam="results/mapping/mapped/{sample}_{unit}_{lib}.{ref}.mem.{pairing}.bam", # Changed from temp. 2026-10-27
     log:
         "logs/mapping/bwa_mem/{sample}_{unit}_{lib}.{ref}.{pairing}.log",
     benchmark:
